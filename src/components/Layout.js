@@ -4,9 +4,17 @@ import { auth } from "utils/nhost";
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 import { useAuth } from "@nhost/react-auth";
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import Button from 'react-bootstrap/Button'
+import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+import '../styles/custom.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faTwitter, faInstagram, faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 
 const GET_USER_DATA = gql`
 query getUserData($user_id: uuid!) {
@@ -35,12 +43,15 @@ export function UserHeader() {
     return <div>Error...</div>;
   }
 
-  const {user} = data;
+  const { user } = data;
 
   return (
-    <div>
-      <div>{user.display_name}</div>
+    <div style={{ display: "inline" }}>
       <div>
+        {user.display_name}
+        <Button>
+          <FontAwesomeIcon icon={faUser} size="2x" />
+        </Button>
         <Button variant="danger" onClick={() => {
           auth.logout();
           history.push("/login");
@@ -57,22 +68,23 @@ export function Header() {
 
   return (
     <div>
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home"><img
-          alt=""
-          src="./react-logo.svg"
-          width="20"
-          height="20"
-          className="d-inline-block align-top"
-        />{' '}
-          React-Bootstrap
+      <Navbar className="header" expand="lg">
+        <Navbar.Brand href="#home">
+          <img
+            alt="Kahina I'Care Logo"
+            src="/kahina-i-care-logo.png"
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+          />
+          Kahina I'Care
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-          </Nav>
+          <Form inline className="mr-auto">
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <Button variant="outline-success">Search</Button>
+          </Form>
           <div>
             {signedIn ? (
               <UserHeader />
@@ -98,7 +110,26 @@ export function Main({ children }) {
 }
 
 export function Footer() {
-  return (<div>Footer</div>);
+  return (
+    <div>
+      <Container fluid className="footer">
+        <Row>
+          <Col xs="4">
+              <h5>Contact Us</h5>
+          </Col>
+          <Col xs="4">
+          <h5>Social Media</h5>
+          <FontAwesomeIcon icon={faTwitter} />
+          <FontAwesomeIcon icon={faInstagram} />
+          <FontAwesomeIcon icon={faFacebookSquare} />
+          </Col>
+          <Col xs="4">
+          <h5>About Us</h5>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
 }
 
 export default function Layout({ children }) {
