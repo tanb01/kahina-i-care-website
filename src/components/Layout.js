@@ -7,7 +7,6 @@ import { useAuth } from "@nhost/react-auth";
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
 import '../styles/custom.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
@@ -82,8 +81,6 @@ export function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Form inline className="mr-auto">
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
           </Form>
           <div>
             {signedIn ? (
@@ -114,17 +111,11 @@ export function Footer() {
     <div>
       <Container fluid className="footer">
         <Row>
-          <Col xs="4">
-              <h5>Contact Us</h5>
-          </Col>
-          <Col xs="4">
+          <Col>
           <h5>Social Media</h5>
           <FontAwesomeIcon icon={faTwitter} />
           <FontAwesomeIcon icon={faInstagram} />
           <FontAwesomeIcon icon={faFacebookSquare} />
-          </Col>
-          <Col xs="4">
-          <h5>About Us</h5>
           </Col>
         </Row>
       </Container>
