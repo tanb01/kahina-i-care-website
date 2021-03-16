@@ -10,6 +10,7 @@ import { AuthGate } from 'components/AuthGate';
 import Login from 'components/Login';
 import Register from 'components/Register';
 import 'bootstrap/dist/css/bootstrap.css';
+import { ROUTES } from './constants';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,14 +21,14 @@ ReactDOM.render(
       >
         <Router>
           <Switch>
-            <Route path="/login">
+            <Route path={ROUTES.login}>
               <Login />
             </Route>
-            <Route path = "/register">
+            <Route path={ROUTES.register}>
               <Register />
             </Route>
             <AuthGate>
-              <Route exact path="/">
+              <Route exact path={ROUTES.home}>
                 <App />
               </Route>
             </AuthGate>

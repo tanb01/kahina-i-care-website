@@ -1,5 +1,47 @@
-# kahina-i-care-website
+# Kahina I'Care Website - [PPE]
 Kahina I'Care website
+
+## Welome to Kahina I'Care
+
+Made with :
+
+- `ReactJS`
+- `Bootstrap`
+- `Hasura`
+- `GrapQL`
+- `Nhost`
+
+## Sections
+
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Demo](#demo)
+- [Authors](#authors)
+- [List of Features](#list-of-features)
+- [Bonus](#bonus)
+
+## Requirements
+
+## Installation
+
+## Usage
+
+  - https://console.nhost.io/tanb01/kahina-i-care-website
+
+## Demo
+
+## Authors
+
+- Benjamin TAN (tanb01), benjamin.tan@edu.ece.fr
+- Camille EUNG (Cameung), camille.eung@edu.ece.fr
+- Emilie CAI (EmiCai), emilie.cai@edu.ece.fr
+- Cyril BOPOUNGO (cybpo), cyril.bopoungo@edu.ece.fr
+- Joanélia RAPSODE, (j0ojo), joanelia.rapsode@edu.ece.fr
+- Class: ING4 2020-2021
+- School: ECE Paris
+
+## List of Features
 
 # Getting Started with Create React App
 
