@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { AuthGate } from 'components/AuthGate';
 import Login from 'components/Login';
 import Register from 'components/Register';
+import AboutUs from 'components/AboutUs';
 import 'bootstrap/dist/css/bootstrap.css';
 import { ROUTES } from './constants';
 
@@ -26,6 +27,9 @@ ReactDOM.render(
             </Route>
             <Route path={ROUTES.register}>
               <Register />
+            </Route>
+            <Route path={ROUTES.aboutUs}>
+              <AboutUs />
             </Route>
             <AuthGate>
               <Route exact path={ROUTES.home}>
