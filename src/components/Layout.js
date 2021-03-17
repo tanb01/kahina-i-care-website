@@ -5,15 +5,18 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 import { useAuth } from "@nhost/react-auth";
 import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../styles/custom.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { faTwitter, faInstagram, faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
+import { faUser, faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faLinkedin, faInstagram, faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import { ROUTES, LINKS } from '../constants';
 
 const GET_USER_DATA = gql`
 query getUserData($user_id: uuid!) {
@@ -79,7 +82,16 @@ export function Header() {
           Kahina I'Care
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse>
+        <Nav className="mr-auto">
+          <Nav.Link as={Link} to={ROUTES.home}>Home</Nav.Link>
+          <Nav.Link href="#contacts">Contacts</Nav.Link>
+          <Nav.Link as={Link} to={ROUTES.aboutUs}>About Us</Nav.Link>
+          <NavDropdown title="Change Language" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">English</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">French</NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
           <Form inline className="mr-auto">
           </Form>
           <div>
@@ -87,8 +99,8 @@ export function Header() {
               <UserHeader />
             ) : (
                 <>
-                  <Link to="/login"><Button variant="primary">Login</Button></Link>
-                  <Link to="/register"><Button variant="primary">Register</Button></Link>
+                  <Link to={ROUTES.login}><Button variant="primary">Login</Button></Link>
+                  <Link to={ROUTES.register}><Button variant="primary">Register</Button></Link>
                 </>
               )}
           </div>
@@ -111,11 +123,28 @@ export function Footer() {
     <div>
       <Container fluid className="footer">
         <Row>
-          <Col>
           <h5>Social Media</h5>
-          <FontAwesomeIcon icon={faTwitter} />
-          <FontAwesomeIcon icon={faInstagram} />
-          <FontAwesomeIcon icon={faFacebookSquare} />
+        </Row>          
+        <Row>          
+          <Col xs="3">
+            <a href={LINKS.linkedin} className="footerLink">
+              <FontAwesomeIcon icon={faLinkedin} size="2x"/>
+            </a>
+          </Col>
+          <Col xs="3">
+          <a href={LINKS.instagram} className="footerLink">
+            <FontAwesomeIcon icon={faInstagram} size="2x"/>
+          </a>
+          </Col>
+          <Col xs="3">
+          <a href={LINKS.facebook} className="footerLink">
+            <FontAwesomeIcon icon={faFacebookSquare} size="2x"/>
+          </a>
+          </Col>
+          <Col xs="3">
+          <a href={LINKS.email} className="footerLink">
+            <FontAwesomeIcon icon={faEnvelope} size="2x"/>
+          </a>
           </Col>
         </Row>
       </Container>

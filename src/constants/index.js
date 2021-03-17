@@ -24,6 +24,7 @@ const LINKS = {
   email: 'mailto:kahina.iot.jewelry@gmail.com',
   linkedin: 'https://www.linkedin.com/company/kahina-paris',
   instagram: 'https://www.instagram.com/octave.kahina',
+  facebook: 'https://www.facebook.com/Octave.Kahina'
 };
 
 export {
