@@ -15,12 +15,25 @@
   position:absolute;
   bottom:0;
   width:100%;
-  height:80px; 
+  height:70px; 
   text-align: center;
 }
 
 .footer h5 {
-  padding-top: 20px;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.footerLink {
+  text-decoration: none;
+}
+
+.footerLink a {
+    color: none !important;
+}
+
+a {
+  color: none !important;
 }
 
 .login {
@@ -50,3 +63,28 @@
   justify-content: center;
   width: 50%;
 }
+
+.aboutUs {
+  text-align: center;
+}
+
+.aboutUs .card-text p {
+  text-align: justify;
+}
+
+.aboutUs div .card {
+  border: none;
+} 
+
+.home {
+
+}
+
+.home h1 {
+  text-align: center;
+}
+
+.home div .card {
+  border: none;
+}
+
