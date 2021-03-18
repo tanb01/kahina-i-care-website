@@ -5,9 +5,9 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-export default function Login() {
+export default function Home() {
   return (
-    <Container fluid className="home">
+    <Container className="home">
       <Row>
         <Col>
           <h1>Protect your beloved ones</h1>
@@ -21,13 +21,13 @@ export default function Login() {
         </Row>
         <Row>
           <Col md="4">
-            <img src="/img/default.png" width="250px" />
+            <img src="/img/default.png" />
           </Col>
           <Col md="4">
-            <img src="/img/default.png" width="250px" />
+            <img src="/img/default.png"  />
           </Col>
           <Col md="4">
-            <img src="/img/default.png" width="250px" />
+            <img src="/img/default.png"  />
           </Col>
         </Row>
         <Row>
@@ -37,9 +37,7 @@ export default function Login() {
                 <Card.Body>
                   <Card.Title>Feel safe wherever you are</Card.Title>
                   <Card.Text>
-                    <p>
                       With Kahina products whenever a dangerous event occurs, it will be displayed in our localisation page. Whether you are a guest or a user, you can view freely all the danger around you.
-                    </p>
                   </Card.Text>
                 </Card.Body>  
               </Card>
