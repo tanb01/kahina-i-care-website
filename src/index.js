@@ -10,6 +10,7 @@ import { AuthGate } from 'components/AuthGate';
 import Login from 'components/Login';
 import Register from 'components/Register';
 import AboutUs from 'components/AboutUs';
+import Profile from 'components/Profile';
 import 'bootstrap/dist/css/bootstrap.css';
 import { ROUTES } from './constants';
 
@@ -30,6 +31,9 @@ ReactDOM.render(
             </Route>
             <Route path={ROUTES.aboutUs}>
               <AboutUs />
+            </Route>
+            <Route path={ROUTES.profile}>
+              <Profile />
             </Route>
             <AuthGate>
               <Route exact path={ROUTES.home}>
