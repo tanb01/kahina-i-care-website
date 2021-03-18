@@ -7,16 +7,16 @@ import { useAuth } from "@nhost/react-auth";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../styles/custom.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faLinkedin, faInstagram, faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import { ROUTES, LINKS } from '../constants';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { ROUTES } from '../constants';
+import Footer from 'components/Footer';
+
 
 const GET_USER_DATA = gql`
 query getUserData($user_id: uuid!) {
@@ -48,20 +48,18 @@ export function UserHeader() {
   const { user } = data;
 
   return (
-    <div style={{ display: "inline" }}>
-      <div>
-        {user.display_name}
-        <Button>
-          <FontAwesomeIcon icon={faUser} size="2x" />
-        </Button>
-        <Button variant="danger" onClick={() => {
-          auth.logout();
-          history.push("/login");
-        }}>
-          Logout
-        </Button>
+    <div className="btn-group">
+      <DropdownButton title={user.display_name}>
+        <Dropdown.Item as={Link} to={ROUTES.profile}>Profile</Dropdown.Item>
+        <Dropdown.Item as={Link} to={ROUTES.progression}>Progress</Dropdown.Item>
+      </DropdownButton>
+      <Button variant="danger" onClick={() => {
+        auth.logout();
+        history.push("/login");
+      }}>
+        Logout
+      </Button>
       </div>
-    </div>
   );
 }
 
@@ -71,7 +69,7 @@ export function Header() {
   return (
     <div>
       <Navbar className="header" expand="lg">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand as={Link} to={ROUTES.home}>
           <img
             alt="Kahina I'Care Logo"
             src="/kahina-i-care-logo.png"
@@ -83,26 +81,26 @@ export function Header() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
-        <Nav className="mr-auto">
-          <Nav.Link as={Link} to={ROUTES.home}>Home</Nav.Link>
-          <Nav.Link href="#contacts">Contacts</Nav.Link>
-          <Nav.Link as={Link} to={ROUTES.aboutUs}>About Us</Nav.Link>
-          <NavDropdown title="Change Language" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">English</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">French</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
+          <Nav className="mr-auto">
+            <Nav.Link as={Link} to={ROUTES.home}>Home</Nav.Link>
+            <Nav.Link as={Link} to={ROUTES.contacts}>Contacts</Nav.Link>
+            <Nav.Link as={Link} to={ROUTES.aboutUs}>About Us</Nav.Link>
+            <NavDropdown title="Change Language" id="basic-nav-dropdown">
+              <NavDropdown.Item href="english">English</NavDropdown.Item>
+              <NavDropdown.Item href="french">French</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
           <Form inline className="mr-auto">
           </Form>
           <div>
             {signedIn ? (
               <UserHeader />
             ) : (
-                <>
-                  <Link to={ROUTES.login}><Button variant="primary">Login</Button></Link>
-                  <Link to={ROUTES.register}><Button variant="primary">Register</Button></Link>
-                </>
-              )}
+              <>
+                <Link to={ROUTES.login}><Button variant="primary">Login</Button></Link>
+                <Link to={ROUTES.register}><Button variant="primary">Register</Button></Link>
+              </>
+            )}
           </div>
         </Navbar.Collapse>
       </Navbar>
@@ -118,39 +116,7 @@ export function Main({ children }) {
   );
 }
 
-export function Footer() {
-  return (
-    <div>
-      <Container fluid className="footer">
-        <Row>
-          <h5>Social Media</h5>
-        </Row>          
-        <Row>          
-          <Col xs="3">
-            <a href={LINKS.linkedin} className="footerLink">
-              <FontAwesomeIcon icon={faLinkedin} size="2x"/>
-            </a>
-          </Col>
-          <Col xs="3">
-          <a href={LINKS.instagram} className="footerLink">
-            <FontAwesomeIcon icon={faInstagram} size="2x"/>
-          </a>
-          </Col>
-          <Col xs="3">
-          <a href={LINKS.facebook} className="footerLink">
-            <FontAwesomeIcon icon={faFacebookSquare} size="2x"/>
-          </a>
-          </Col>
-          <Col xs="3">
-          <a href={LINKS.email} className="footerLink">
-            <FontAwesomeIcon icon={faEnvelope} size="2x"/>
-          </a>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-  );
-}
+
 
 export default function Layout({ children }) {
   return (
