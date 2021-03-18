@@ -2,74 +2,130 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import  Carousel from 'react-bootstrap/Carousel';
+
 
 export default function Home() {
   return (
     <Container className="home">
       <Row>
         <Col>
-          <h1>Protect your beloved ones</h1>
+        <CardDeck>
+              <Card>
+                <Card.Body>
+        <div>
+          
+          <section class="jumbotron text-center" >
+         
+  
+              <div class="container" id="protect">
+                   <h1 class="jumbotron-heading" > Protect your beloved ones</h1>
+                  <p id="lead-text-muted" style={{color:'darkgrey'}}>Before, during or after an aggression,we wish to accompany our users by giving them the means to protect themselves, to feel safe and to share their experience, in an environment of kindness, trust and love. The Kahina project includes the connected jewel which will send information about the user (location...) , the alert accessory and the I'Care platform. </p>
+              </div>
+          </section>
+
+
+
+        </div>
+        </Card.Body>
+              </Card>
+            </CardDeck>
+
         </Col>
       </Row>
-      <Container>
-        <Row>
-          <Col>
-            <p>Before, during or after an aggression,we wish to accompany our users by giving them the means to protect themselves, to feel safe and to share their experience, in an environment of kindness, trust and love. The Kahina project includes the connected jewel which will send information about the user (location,...) , the alert accessory and the I'Care platform.</p>
-          </Col>
-        </Row>
-        <Row>
+
+<Container>
+  
+  <Row className = "products ">
+
+      
+  <Carousel className="caroussel">
+  
+  <Carousel.Item >
+
           <Col md="4">
-            <img src="/img/default.png" />
+            <img src="/img/default.png" width="300px" style={{borderRadius: '60px'}}/>
+            <Carousel.Caption > <h5 >Jewel</h5></Carousel.Caption>
           </Col>
+
+  </Carousel.Item>
+
+ <Carousel.Item>
           <Col md="4">
-            <img src="/img/default.png"  />
+            <img src="/img/default.png" width="300px" style={{borderRadius: '60px'}}/>
+            <Carousel.Caption><h5>Accessory</h5></Carousel.Caption>
           </Col>
+  </Carousel.Item>
+  
+  <Carousel.Item>
           <Col md="4">
-            <img src="/img/default.png"  />
+            <img src="/img/default.png" width="300px" style={{borderRadius: '60px'}}/>
+            <Carousel.Caption> <h5 >Plateform</h5></Carousel.Caption>
+            <br />
           </Col>
-        </Row>
+  </Carousel.Item>
+
+  
+  </Carousel>
+  
+  </Row>
+
+        
+
+        <br />
         <Row>
           <Col className="flex justify-center">
             <CardDeck>
-              <Card>
+              <Card >
                 <Card.Body>
+
+                <hr class="dotted"/>
                   <Card.Title>Feel safe wherever you are</Card.Title>
                   <Card.Text>
                       With Kahina products whenever a dangerous event occurs, it will be displayed in our localisation page. Whether you are a guest or a user, you can view freely all the danger around you.
+                     
+                      <br /><br />
+            <Button  variant="outline-info" style={{borderRadius: '10px'}} >Learn more</Button>{''}
+ 
                   </Card.Text>
                 </Card.Body>  
               </Card>
               <Card>
                 <Card.Body>
-                  <Card.Img src="/img/default.png" />
+                  <Card.Img src="/img/default.png" style={{borderRadius: '40px'}} />
                 </Card.Body>
               </Card>
             </CardDeck>
           </Col>
         </Row>
+
         <Row>
           <Col className="flex justify-center">
             <CardDeck>
               <Card>
                 <Card.Body>
-                  <Card.Title>Our Team</Card.Title>
-                  <Card.Img src="/img/default.png" />
+              
+
+                  <Card.Img src="/img/default.png" style={{borderRadius: '40px'}}/>
                 </Card.Body>
               </Card>
               <Card>
                 <Card.Body>
-                  <Card.Title>Our Story</Card.Title>
+
+                <hr class="dotted"/>
+
+                  <Card.Title>A full specialized journey awaits you</Card.Title>
                   <Card.Text>
                     <p>
-                      It was during the summer of 2020 that the Kahina I’Care project saw the light of day. Joanélia RAPSODE and Camille EUNG did their 3<sup>rd</sup> year internships with the start-up Kahina. Kahina’s aim is to create a bracelet which would launch an alert when someone is being assaulted.
-                    </p>
-                    <p>
-                      Inspired by Kahina, Camille and Joanélia decided to build a team to contribute to their cause. Joined by five other members of which Emilie Cai, Léonie Cadot, Benjamin Tan, Jennifer Tecpanecatl and Cyril Bopoungo.
-                    </p>
-                    <p>
-                      For the team’s 2020-2021 school year Multidisciplinary Team Project and to help Kahina and their community, the Kahina I’Care Project wishes to create a web application allowing people to be helped and supported throughout their lives. We wish to create a safe environment by accompanying and encouraging our users’ mental and physical wellbeing. This is an internal project of the Kahina start-up.{' '}
+            Funny and serious challenges to help you overcome your fears. Build your confidence and find joy in your daily life. View your progression, collect accomplishments and uncover your true potential.  
+            <br /><br />
+            <Button  variant="outline-info" style={{borderRadius: '10px'}} >Begin your journey now</Button>{''}
+
+       
                     </p>
                   </Card.Text>
                 </Card.Body>
@@ -77,6 +133,84 @@ export default function Home() {
             </CardDeck>
           </Col>
         </Row>
+
+        <Row>
+          <Col className="flex justify-center">
+            <CardDeck>
+              <Card>
+                <Card.Body>
+                <hr class="dotted"/>
+
+                <Card.Title>Cooking Lessons</Card.Title>
+                  <Card.Text>
+                    <p>
+                    Whether you are a beginner or a master of cooking. Learn how to make healthy recipes, share your masterpieces with your beloved ones and rediscover the joy of cooking.
+                      <br /><br />
+            <Button  variant="outline-info" style={{borderRadius: '10px'}} >Participate now</Button>{''}</p>
+                  </Card.Text>
+                </Card.Body>  
+              </Card>
+              <Card>
+                <Card.Body>
+                  <Card.Img src="/img/default.png" style={{borderRadius: '40px'}}/>
+                </Card.Body>
+              </Card>
+            </CardDeck>
+          </Col>
+        </Row>
+
+       <Row>
+          <Col className="flex justify-center">
+            <CardDeck>
+              <Card>
+                <Card.Body>
+                  <Card.Img src="/img/default.png" style={{borderRadius: '40px'}} />
+                </Card.Body>
+              </Card>
+              <Card>
+                <Card.Body>
+                <hr class="dotted"/>
+                
+                  <Card.Title>Self-defense classes </Card.Title>
+                  <Card.Text>
+                    <p>
+     Discover how to protect yourself from assaults. Learn self-defense techniques and the behaviors to adopt to prevent attacks. 
+Consult our ressources about Avoidance, Awareness and Prevention... 
+                      <br /><br />
+            <Button  variant="outline-info" style={{borderRadius: '10px'}} >Start now </Button>{''}</p>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </CardDeck>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col className="flex justify-center">
+            <CardDeck>
+              <Card>
+                <Card.Body>
+
+                <hr class="dotted"/>
+                  <Card.Title>Counselling</Card.Title>
+                  <Card.Text>
+                    <p>
+                    Get a glimpse at our selection of our theme oriented counselling. Whether it’s for your personal life or professional life, instruct yourself and master all the knowledge needed to face your day with confidence. 
+                      <br /><br />
+            <Button  variant="outline-info" style={{borderRadius: '10px'}} >Advice Me</Button>{''}
+                     </p>
+                  </Card.Text>
+                </Card.Body>  
+              </Card>
+              <Card>
+                <Card.Body>
+                  <Card.Img src="/img/default.png" style={{borderRadius: '40px'}}/>
+                </Card.Body>
+              </Card>
+            </CardDeck>
+          </Col>
+        </Row>
+
       </Container>
 
     </Container>
