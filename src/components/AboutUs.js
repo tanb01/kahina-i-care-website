@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Layout, { Main } from '../components/Layout';
+import { Jumbotron } from 'react-bootstrap';
 
 export default function AboutUs() {
   return (
@@ -13,27 +14,27 @@ export default function AboutUs() {
         <Container className="aboutUs">
           <Row>
             <Col>
-              <h3>Our Mission</h3>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <h5>Protect your beloved ones</h5>
+              <Jumbotron>
+              <h3 class="underlined-color-title">Our Mission</h3>
+              <h5>"Protect your beloved ones"</h5>
+              </Jumbotron>
             </Col>
           </Row>
           <Row>
             <Col className="flex justify-center">
-              <CardDeck>
-                <Card>
-                  <Card.Body>
-                    <Card.Title>Our Team</Card.Title>
-                    <Card.Img id="about-us-team-photo" variant="top" src="/img/i'care-team-photo.png" />
-                  </Card.Body>
-                </Card>
-                <Card>
-                  <Card.Body>
-                    <Card.Title>Our Story</Card.Title>
-                    <Card.Text>
+            <CardDeck>
+              <Card>
+                <Card.Body>
+                  <Card.Title class="secondary-title">Our Team</Card.Title>
+                  <hr/>
+                  <Card.Img id="about-us-team-photo" variant="top" src="/img/i'care-team-photo.png"/>
+                </Card.Body>
+              </Card> 
+              <Card>
+                <Card.Body>
+                  <Card.Title class="secondary-title">Our Story</Card.Title>
+                  <hr/>
+                  <Card.Text>
                       It was during the summer of 2020 that the Kahina I’Care project saw the light of day. Joanélia RAPSODE and Camille EUNG did their 3<sup>rd</sup> year internships with the start-up Kahina. Kahina’s aim is to create a bracelet which would launch an alert when someone is being assaulted.
                       </Card.Text>
                     <Card.Text>
