@@ -1,5 +1,6 @@
 :root {
   --primary-color: rgb(114, 85, 216);
+  --jumbotron-color: rgb(127, 100, 224);
 }
 
 #root {
@@ -75,10 +76,56 @@ a {
 .aboutUs {
   flex: 1;
   text-align: center;
-  /* min-height: 100vh; */
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.aboutUs .card-text {
+.aboutUs .underlined-color-title{
+  background-image:linear-gradient(var(--primary-color),var(--primary-color));
+  background-size: 100% 25px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  animation-duration: 1s;
+  animation-name: animated-underlined-color-title;
+}
+
+@keyframes animated-underlined-color-title{
+  from{
+    background-size: 100% 2px;
+  }
+  to{
+    background-size: 100% 25px;
+  }
+}
+
+.aboutUs hr{
+  width: 90%;
+  margin: none;
+}
+.aboutUs .jumbotron{
+  padding: 0;
+  padding-top: 30px;
+  margin: 0;
+  text-align: left;
+  border-radius: 0;
+  color:black;
+  background:white;
+}
+.aboutUs .jumbotron h3{
+  padding-left: 7%;
+  font-size: 50px;
+}
+.aboutUs .jumbotron h5{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center;
+  font-size: 30px;
+  font-style: italic;
+}
+.aboutUs .secondary-title{
+  font-weight: bold;
+  font-size: 20px;
+}
+.aboutUs .card-text p {
   text-align: justify;
 }
 
