@@ -83,7 +83,7 @@ export function Header() {
         <Navbar.Collapse>
           <Nav className="mr-auto">
             <Nav.Link as={Link} to={ROUTES.home}>Home</Nav.Link>
-            <Nav.Link as={Link} to={ROUTES.contacts}>Contacts</Nav.Link>
+            <Nav.Link as={Link} to={ROUTES.helpfulLinks}>Helpful Links</Nav.Link>
             <Nav.Link as={Link} to={ROUTES.aboutUs}>About Us</Nav.Link>
             <NavDropdown title="Change Language" id="basic-nav-dropdown">
               <NavDropdown.Item href="english">English</NavDropdown.Item>
