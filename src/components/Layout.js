@@ -59,7 +59,7 @@ export function UserHeader() {
       }}>
         Logout
       </Button>
-      </div>
+    </div>
   );
 }
 
@@ -83,6 +83,7 @@ export function Header() {
         <Navbar.Collapse>
           <Nav className="mr-auto">
             <Nav.Link as={Link} to={ROUTES.home}>Home</Nav.Link>
+            {signedIn ? (<Nav.Link as={Link} to={ROUTES.dashboard}>Dashboard</Nav.Link>) : ''}
             <Nav.Link as={Link} to={ROUTES.helpfulLinks}>Helpful Links</Nav.Link>
             <Nav.Link as={Link} to={ROUTES.aboutUs}>About Us</Nav.Link>
             <NavDropdown title="Change Language" id="basic-nav-dropdown">

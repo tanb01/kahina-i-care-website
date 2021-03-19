@@ -10,15 +10,8 @@ const ROUTES = {
   profile: '/profile',
   progression: '/progression',
   accomplishments: '/accomplishments',
-  helpfulLinks: '/helpful-links'
-};
-
-const NAVBAR = {
-  home: 'home',
-  counselling: 'counselling',
-  courses: 'courses',
-  contacts: 'contacts',
-  aboutUs: 'aboutUs'
+  helpfulLinks: '/helpful-links',
+  dashboard: '/dashboard'
 };
 
 const LINKS = {
@@ -39,6 +32,5 @@ const LINKS = {
 
 export {
   ROUTES,
-  NAVBAR,
   LINKS
 };
