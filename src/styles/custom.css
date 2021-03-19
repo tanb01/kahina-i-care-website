@@ -166,3 +166,18 @@ a {
   justify-content: center;
   width: 50%;
 }
+
+.contacts .Assos {
+  text-align:center;
+}
+
+.contacts .imagescontacts{
+  align-content:center;
+  margin-left:60px;
+  margin-bottom:20px;
+}
+
+.contacts {
+  margin-top:30px;
+  margin-bottom:30px;
+}
