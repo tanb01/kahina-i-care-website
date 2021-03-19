@@ -137,6 +137,9 @@ a {
   flex: 1;
 }
 
+
+/* LANDING PAGE*/
+
 .home h1 {
   text-align: center;
 }
@@ -146,8 +149,11 @@ a {
 }
 
 .home img {
-  width:250px;
+  width: 100%;
 }
+
+
+
 
 .container {
   margin-top: 1.5rem !important;
@@ -166,6 +172,117 @@ a {
   justify-content: center;
   width: 50%;
 }
+.products
+{
+  text-align: center;
+  font-family: Georgia;
+}
+
+
+
+.intro
+{
+  font-size: small;
+}
+
+.jumbotron {
+position: relative;
+overflow: hidden;
+background-image: url("image-home/jumbotron.jpg");
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat, repeat;
+background-size: cover;
+box-shadow: 10px 10px 5px 0px rgb(0,0,0,0.75);
+height: 70vh;
+
+}
+
+.jumbotron .container {
+position: relative;
+z-index: 1;
+
+}
+
+#protect
+{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color:rgb(0, 0, 0);
+  font-weight: bold;
+  font-style: italic;
+  font-size: 100px;
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+#lead-text-muted
+{
+  font-family:'Georgia';
+  font-size: 17px;
+  font-style:oblique;
+  font-weight:lighter ;
+  color: rgb(255, 255, 255);
+  padding: 20px;
+}
+hr.rounded {
+  border-top: 2px solid #bbb;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.caroussel
+{
+  font-family:Georgia; 
+  justify-items: center;
+}
+
+.carousel-item
+{
+  margin:auto;
+  margin-left : 33%;
+  margin-right : 33%;
+ justify-items: center;
+ 
+}
+
+.h5
+{
+  text-align: center;
+}
+
+#caroussel-caption-j
+{
+    width:100%;
+    left:0 !important;
+    color: black;
+    font-family: Georgia;
+    font-style: oblique;
+    text-align:left;
+    margin-left:40px;
+}
+.caroussel-intro
+{
+ margin:auto;
+}
+#caroussel-caption
+{
+    width:100%;
+    left:0 !important;
+    color: white;
+    font-family: Georgia;
+    font-style: oblique;
+    text-align:left;
+    margin-left:40px;
+   
+}
+
+.divider-h
+{
+  border-top: 1px solid black;
+}
+
+
+
+
 
 .contacts .Assos {
   text-align:center;
