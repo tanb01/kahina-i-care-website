@@ -21,15 +21,14 @@ export default function Home() {
           
           <section class="jumbotron text-center" >
          
-  
-              <div class="container" id="protect">
-                   <h1 class="jumbotron-heading" > Protect your beloved ones</h1>
-                  <p id="lead-text-muted" style={{color:'darkgrey'}}>Before, during or after an aggression,we wish to accompany our users by giving them the means to protect themselves, to feel safe and to share their experience, in an environment of kindness, trust and love. The Kahina project includes the connected jewel which will send information about the user (location...) , the alert accessory and the I'Care platform. </p>
+          
+              <div class="container" >
+                   <h1 class="jumbotron-heading" id="protect" > Protect your beloved ones</h1>
+                  <p id="lead-text-muted" >Before, during or after an aggression,we wish to accompany our users by giving them the means to protect themselves, to feel safe and to share their experience, in an environment of kindness, trust and love. </p>
               </div>
           </section>
-
-
-
+          <br />
+          <p classNam="caroussel-intro">The Kahina project includes the connected jewel which will send information about the user, the alert accessory and the I'Care platform. </p>
         </div>
         </Card.Body>
               </Card>
@@ -40,43 +39,46 @@ export default function Home() {
 
 <Container>
   
+  
   <Row className = "products ">
 
-      
+  
   <Carousel className="caroussel">
   
-  <Carousel.Item >
+
+      <Carousel.Item >
 
           <Col md="4">
-            <img src="/img/default.png" width="300px" style={{borderRadius: '60px'}}/>
-            <Carousel.Caption > <h5 >Jewel</h5></Carousel.Caption>
+            <img src="/img/bracelet.jpg" width={800} height={300} />
+            <Carousel.Caption id="caroussel-caption-j" > <h5 >Jewel</h5></Carousel.Caption>
           </Col>
 
-  </Carousel.Item>
+       </Carousel.Item>
 
- <Carousel.Item>
+      <Carousel.Item>
           <Col md="4">
-            <img src="/img/default.png" width="300px" style={{borderRadius: '60px'}}/>
-            <Carousel.Caption><h5>Accessory</h5></Carousel.Caption>
+            <img src="/img/accessory.jpg" width={800} height={300} />
+            <Carousel.Caption id="caroussel-caption"><h5>Accessory</h5></Carousel.Caption>
           </Col>
-  </Carousel.Item>
+      </Carousel.Item>
   
-  <Carousel.Item>
+      <Carousel.Item>
           <Col md="4">
-            <img src="/img/default.png" width="300px" style={{borderRadius: '60px'}}/>
-            <Carousel.Caption> <h5 >Plateform</h5></Carousel.Caption>
+            <img src="/img/platform.jpg" width={800} height={300} />
+            <Carousel.Caption id="caroussel-caption"> <h5 >Platform</h5></Carousel.Caption>
             <br />
           </Col>
-  </Carousel.Item>
-
-  
+      </Carousel.Item>
+      
   </Carousel>
-  
+
   </Row>
+        <br /> <br /> 
 
+        <hr class="divider-h"/>
         
+        <br /> <br />
 
-        <br />
         <Row>
           <Col className="flex justify-center">
             <CardDeck>
@@ -87,7 +89,7 @@ export default function Home() {
                   <Card.Title>Feel safe wherever you are</Card.Title>
                   <Card.Text>
                       With Kahina products whenever a dangerous event occurs, it will be displayed in our localisation page. Whether you are a guest or a user, you can view freely all the danger around you.
-                     
+
                       <br /><br />
             <Button  variant="outline-info" style={{borderRadius: '10px'}} >Learn more</Button>{''}
  
@@ -96,7 +98,7 @@ export default function Home() {
               </Card>
               <Card>
                 <Card.Body>
-                  <Card.Img src="/img/default.png" style={{borderRadius: '40px'}} />
+                  <Card.Img src="/img/localisation.jpg"  />
                 </Card.Body>
               </Card>
             </CardDeck>
@@ -110,7 +112,7 @@ export default function Home() {
                 <Card.Body>
               
 
-                  <Card.Img src="/img/default.png" style={{borderRadius: '40px'}}/>
+                  <Card.Img src="/img/gamification.jpg"/>
                 </Card.Body>
               </Card>
               <Card>
@@ -152,7 +154,7 @@ export default function Home() {
               </Card>
               <Card>
                 <Card.Body>
-                  <Card.Img src="/img/default.png" style={{borderRadius: '40px'}}/>
+                  <Card.Img src="/img/cooking.jpg" />
                 </Card.Body>
               </Card>
             </CardDeck>
@@ -164,7 +166,7 @@ export default function Home() {
             <CardDeck>
               <Card>
                 <Card.Body>
-                  <Card.Img src="/img/default.png" style={{borderRadius: '40px'}} />
+                  <Card.Img src="/img/self-defense.jpg" />
                 </Card.Body>
               </Card>
               <Card>
@@ -190,7 +192,6 @@ Consult our ressources about Avoidance, Awareness and Prevention...
             <CardDeck>
               <Card>
                 <Card.Body>
-
                 <hr class="dotted"/>
                   <Card.Title>Counselling</Card.Title>
                   <Card.Text>
@@ -204,7 +205,7 @@ Consult our ressources about Avoidance, Awareness and Prevention...
               </Card>
               <Card>
                 <Card.Body>
-                  <Card.Img src="/img/default.png" style={{borderRadius: '40px'}}/>
+                  <Card.Img src="/img/counselling.jpg" />
                 </Card.Body>
               </Card>
             </CardDeck>
