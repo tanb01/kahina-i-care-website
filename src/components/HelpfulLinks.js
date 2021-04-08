@@ -106,7 +106,7 @@ export default function HelpfulLinks() {
                       <Card>
                         <Col className="Assos">
                           <p></p>
-                          <h6>Trouvez un psychologue grâce au site Mon Psy</h6>
+                          <h6>Find a psychologist with the website My Psy</h6>
                         </Col>
                         <Col>
                           <a href={LINKS.monpsy}>
@@ -119,7 +119,7 @@ export default function HelpfulLinks() {
                       <Card>
                         <Col className="Assos">
                           <p></p>
-                          <h6>Réservez une consultation physique ou en vidéo avec un professionnel de santé sur Doctolib</h6>
+                          <h6>Book a physical or video consultation with a healthcare professional on Doctolib</h6>
                         </Col>
                         <Col>
                           <a href={LINKS.doctolib}>
@@ -132,7 +132,7 @@ export default function HelpfulLinks() {
                       <Card>
                         <Col className="Assos">
                           <p></p>
-                          <h6>Renseignez-vous sur différents symptômes sur le site Doctissimo</h6>
+                          <h6>Find out about different symptoms on the Doctissimo website</h6>
                         </Col>
                         <Col>
                           <a href={LINKS.doctissimo}>

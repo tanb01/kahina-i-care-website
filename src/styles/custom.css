@@ -515,3 +515,8 @@ hr.rounded {
   height: 60px;
   color: white;
 }
+
+.QuestionModal {
+  justify-content: center;
+  text-align: center;
+}
