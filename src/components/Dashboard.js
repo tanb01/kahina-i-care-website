@@ -1,4 +1,5 @@
-import React from 'react';
+import {React} from 'react';
+import { Link } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -6,7 +7,7 @@ import CardDeck from 'react-bootstrap/CardDeck';
 import CardColumns from 'react-bootstrap/CardColumns';
 import Card from 'react-bootstrap/Card';
 import Layout, { Main } from './Layout';
-import { LINKS } from '../constants';
+import { ROUTES, LINKS } from '../constants';
 import { useState, useEffect, useCallback } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -41,8 +42,7 @@ export default function Dashboard() {
                         <Card className="card-dashboard" style={{ width: '25rem' }}>
                             <Card.Header id="dash-goals"><h3>Goals</h3></Card.Header>
                             <Card.Body>
-                                <Button className="button-goals" variant="primary" size="lg" variant="dark">START <div><i class="fa fa-spinner fa-spin"></i></div>
-                                </Button>
+                              <Link to={ROUTES.goals}><Button className="button-goals" variant="primary" size="lg" variant="dark">START</Button></Link>
                             </Card.Body>
                         </Card>
                     </Col>
