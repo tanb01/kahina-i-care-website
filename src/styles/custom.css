@@ -292,3 +292,7 @@ hr.rounded {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
+.QuestionModal {
+  justify-content: center;
+}
