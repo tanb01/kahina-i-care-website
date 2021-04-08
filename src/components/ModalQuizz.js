@@ -214,7 +214,7 @@ export default function Example() {
               <Button variant="secondary" onClick={handleClose}>
                 Close
               </Button>
-              <Button type='submit' variant="primary" onClick={handleClose}>
+              <Button variant="primary" onClick={handleClose}>
                 Submit
               </Button>
               

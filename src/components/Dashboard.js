@@ -11,6 +11,7 @@ import { ROUTES, LINKS } from '../constants';
 import { useState, useEffect, useCallback } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ModalQuizz from 'components/ModalQuizz'
 
 //Fetch API
 import axios from 'axios';
@@ -24,7 +25,7 @@ export default function Dashboard() {
     return (
 
         <Layout>
-
+          <ModalQuizz/>
             <Row> <Col sm><Card className="card-dashboard-quotes" >
 
                 <Card.Header> <h3 id="dash-quotes">Daily Quotes</h3></Card.Header>
