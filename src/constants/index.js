@@ -10,7 +10,8 @@ const ROUTES = {
   profile: '/profile',
   progression: '/progression',
   accomplishments: '/accomplishments',
-  helpfulLinks: '/helpful-links'
+  helpfulLinks: '/helpful-links',
+  goals: '/goals'
 };
 
 const NAVBAR = {

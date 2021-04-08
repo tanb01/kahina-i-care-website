@@ -12,6 +12,7 @@ import Register from 'components/Register';
 import AboutUs from 'components/AboutUs';
 import Profile from 'components/Profile';
 import HelpfulLinks from 'components/HelpfulLinks';
+import Goals from 'components/Goals';
 import 'bootstrap/dist/css/bootstrap.css';
 import { ROUTES } from './constants';
 
@@ -38,6 +39,9 @@ ReactDOM.render(
             </Route>
             <Route path={ROUTES.helpfulLinks}>
               <HelpfulLinks />
+            </Route>
+            <Route path={ROUTES.goals}>
+              <Goals />
             </Route>
             <AuthGate>
               <Route exact path={ROUTES.home}>
