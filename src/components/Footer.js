@@ -10,29 +10,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Footer() {
   return (
-      <Container fluid className="footer align-items-center">     
-        <Row className="justify-content-center">          
-          <Col>
-            <a href={LINKS.linkedin} className="footerLink">
-              <FontAwesomeIcon icon={faLinkedin} size="2x"/>
-            </a>
-          </Col>
-          <Col>
+    <Container fluid className="footer align-items-center">
+      <Row className="justify-content-center">
+        <Col>
+          <a href={LINKS.linkedin} className="footerLink">
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
+          </a>
+        </Col>
+        <Col>
           <a href={LINKS.instagram} className="footerLink">
-            <FontAwesomeIcon icon={faInstagram} size="2x"/>
+            <FontAwesomeIcon icon={faInstagram} size="2x" />
           </a>
-          </Col>
-          <Col>
+        </Col>
+        <Col>
           <a href={LINKS.facebook} className="footerLink">
-            <FontAwesomeIcon icon={faFacebookSquare} size="2x"/>
+            <FontAwesomeIcon icon={faFacebookSquare} size="2x" />
           </a>
-          </Col>
-          <Col>
+        </Col>
+        <Col>
           <a href={LINKS.email} className="footerLink">
-            <FontAwesomeIcon icon={faEnvelope} size="2x"/>
+            <FontAwesomeIcon icon={faEnvelope} size="2x" />
           </a>
-          </Col>
-        </Row>
-      </Container>
+        </Col>
+      </Row>
+    </Container>
   );
 }
