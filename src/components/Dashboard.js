@@ -1,153 +1,80 @@
-import React from 'react';
+import {React} from 'react';
+import { Link } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import CardDeck from 'react-bootstrap/CardDeck';
 import CardColumns from 'react-bootstrap/CardColumns';
 import Card from 'react-bootstrap/Card';
-import Layout, {Main} from './Layout';
-import { LINKS } from '../constants';
+import Layout, { Main } from './Layout';
+import { ROUTES, LINKS } from '../constants';
+import { useState, useEffect, useCallback } from 'react';
+import { Button, Spinner } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+//Fetch API
+import axios from 'axios';
+import Quotes from 'components/Quotes';
+import Music from 'components/Music';
+import Progression from 'components/Progression';
+import Accomplishment from 'components/Accomplishment';
+
 
 export default function Dashboard() {
     return (
-      <Layout>
-          <Main>
-              <Container className="dashboard">
 
-                  <Col className="flex justify-center">
-                    <CardDeck>
-                        <CardColumns>
-                        <Card>
+        <Layout>
+
+            <Row> <Col sm><Card className="card-dashboard-quotes" >
+
+                <Card.Header> <h3 id="dash-quotes">Daily Quotes</h3></Card.Header>
+                <Card.Body>
+                    <Quotes />
+                </Card.Body>
+            </Card>
+            </Col>
+            </Row>
+
+            <Container fluid={true} className="dashboard">
+                <Row>
+
+                    <Col sm>
+                        <Card className="card-dashboard" style={{ width: '25rem' }}>
+                            <Card.Header id="dash-goals"><h3>Goals</h3></Card.Header>
                             <Card.Body>
-                            <Card.Title>Websites and associations</Card.Title>
-                            <Row>
-                                <Card>
-                                <Col className="Assos">
-                                <Card.Title>France Victimes</Card.Title>
-                                </Col>
-                                <Col>
-                                <a href={LINKS.francevictimes}>
-                                <Card.Img className="imagescontacts" variant="top" src="/img/logo-france-victimes.png" style={{width:'150px'}} />
-                                </a>
-                                </Col>
-                                </Card>
-                            </Row>
-                            <Row>
-                                <Card>
-                                <Col className="Assos">
-                                <h5>Fil Santé Jeunes</h5>
-                                </Col>
-                                <Col>
-                                <a href={LINKS.filsantejeunes}>
-                                <Card.Img className="imagescontacts" variant="top" src="/img/filsantejeunes.jpg" style={{width:'150px'}} thumbnail />
-                                </a>
-                                </Col>
-                                </Card>
-                            </Row>
-                            <Row>
-                                <Card>
-                                <Col className="Assos">
-                                <h5>Tous Bénévoles</h5>
-                                </Col>
-                                <Col>
-                                <a href={LINKS.tousbenevoles}>
-                                <Card.Img className="imagescontacts" variant="top" src="/img/tousbenevoles.jpg" style={{width:'150px'}} />
-                                </a>
-                                </Col>
-                                </Card>
-                                </Row>
+                              <Link to={ROUTES.goals}><Button className="button-goals" variant="primary" size="lg" variant="dark">START</Button></Link>
                             </Card.Body>
                         </Card>
-                        <Card>
+                    </Col>
+
+                    <Col sm><Card className="card-dashboard" style={{ width: '25rem' }}>
+                        <Card.Header id="dash-prog"><h3>Progression</h3></Card.Header>
+                        <Card.Body>
+                            <Progression />
+                        </Card.Body>
+                    </Card>
+                    </Col>
+                    </Row>
+                    <Row>
+                    <Col sm> <Card className="card-dashboard" style={{ width: '25rem' }}>
+                        <Card.Header id="dash-acc"><h3>Accomplishments</h3></Card.Header>
+
+                        <Card.Body>
+                            <Accomplishment></Accomplishment>
+                        </Card.Body>
+                    </Card>
+                    </Col>
+                    <Col sm>
+                        <Card className="card-dashboard" style={{ width: '25rem' }}>
+                            <Card.Header id="dash-mus"><h3>Music</h3></Card.Header>
                             <Card.Body>
-                            <Card.Title>Applications</Card.Title>
-                            <Row>
-                                <Card>
-                                <Col className="Assos">
-                                <h5>Street Alert</h5>
-                                </Col>
-                                <Col>
-                                <a href={LINKS.streetalert}>
-                                <Card.Img className="imagescontacts" variant="top" src="/img/streetalert.png" style={{width:'140px'}} />
-                                </a>
-                                </Col>
-                                </Card>
-                            </Row>
-                            <Row>
-                                <Card>
-                                <Col className="Assos">
-                                <h5>Petit Bambou</h5>
-                                </Col>
-                                <Col>
-                                <a href={LINKS.petitbambou}>
-                                <Card.Img className="imagescontacts" variant="top" src="/img/petitbambou.png" style={{width:'150px'}} />
-                                </a>
-                                </Col>
-                                </Card>
-                            </Row>
-                            <Row>
-                                <Card>
-                                <Col className="Assos">
-                                <h5>App-Elles</h5>
-                                </Col>
-                                <Col>
-                                <a href={LINKS.appelles}>
-                                <Card.Img className="imagescontacts" variant="top" src="/img/appelles.png" style={{width:'150px'}} />
-                                </a>
-                                </Col>
-                                </Card>
-                            </Row>
-                            </Card.Body>
-                        </Card> 
-                        <Card>
-                            <Card.Body>
-                            <Card.Title>Specialists</Card.Title>
-                            <Row>
-                                <Card>
-                                <Col className="Assos">
-                                <p></p>
-                                <h6>Trouvez un psychologue grâce au site Mon Psy</h6>
-                                </Col>
-                                <Col>
-                                <a href={LINKS.monpsy}>
-                                <Card.Img className="imagescontacts" variant="top" src="/img/monpsy.png" style={{width:'180px'}} />
-                                </a>
-                                </Col>
-                                </Card>
-                            </Row>
-                            <Row>
-                                <Card>
-                                <Col className="Assos">
-                                <p></p>
-                                <h6>Réservez une consultation physique ou en vidéo avec un professionnel de santé sur Doctolib</h6>
-                                </Col>
-                                <Col>
-                                <a href={LINKS.doctolib}>
-                                <Card.Img className="imagescontacts" variant="top" src="/img/doctolib.png" style={{width:'180px'}} />
-                                </a>
-                                </Col>
-                                </Card>
-                            </Row>
-                            <Row>
-                                <Card>
-                                <Col className="Assos">
-                                <p></p>
-                                <h6>Renseignez-vous sur différents symptômes sur le site Doctissimo</h6>
-                                </Col>
-                                <Col>
-                                <a href={LINKS.doctissimo}>
-                                <Card.Img className="imagescontacts" variant="top" src="/img/doctissimo.jpg" style={{width:'180px'}} />
-                                </a>
-                                </Col>
-                                </Card>
-                            </Row>
-                            </Card.Body>
+                                <Music /> </Card.Body>
                         </Card>
-                        </CardColumns>  
-                    </CardDeck>
-                  </Col>
-              </Container>
-          </Main>
-      </Layout>
+                    </Col>
+                </Row>
+
+            </Container>
+
+        </Layout>
     )
-  }
+}

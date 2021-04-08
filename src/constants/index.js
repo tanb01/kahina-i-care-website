@@ -11,6 +11,7 @@ const ROUTES = {
   progression: '/progression',
   accomplishments: '/accomplishments',
   helpfulLinks: '/helpful-links',
+  goals: '/goals',
   dashboard: '/dashboard'
 };
 
