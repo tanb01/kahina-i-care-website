@@ -29,12 +29,12 @@ export default function Register() {
         <Col className="flex justify-center">
           <div className="text-center flex flex-col mx-auto shadow p-5 my-12 mt-4 mb-4">
             <img
-                alt="Kahina I'Care Logo"
-                src="/kahina-i-care-logo.png"
-                width="200"
-                height="200"
-                className="d-inline-block align-top mb-4"
-              />
+              alt="Kahina I'Care Logo"
+              src="/kahina-i-care-logo.png"
+              width="200"
+              height="200"
+              className="d-inline-block align-top mb-4"
+            />
             <div className="text-center h2 mb-4">Register</div>
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formEmailRegistration">

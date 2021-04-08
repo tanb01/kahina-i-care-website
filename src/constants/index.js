@@ -11,15 +11,8 @@ const ROUTES = {
   progression: '/progression',
   accomplishments: '/accomplishments',
   helpfulLinks: '/helpful-links',
-  goals: '/goals'
-};
-
-const NAVBAR = {
-  home: 'home',
-  counselling: 'counselling',
-  courses: 'courses',
-  contacts: 'contacts',
-  aboutUs: 'aboutUs'
+  goals: '/goals',
+  dashboard: '/dashboard'
 };
 
 const LINKS = {
@@ -40,6 +33,5 @@ const LINKS = {
 
 export {
   ROUTES,
-  NAVBAR,
   LINKS
 };
