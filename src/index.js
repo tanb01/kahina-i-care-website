@@ -9,7 +9,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { AuthGate } from 'components/AuthGate';
 import Login from 'components/Login';
 import Register from 'components/Register';
+import AboutUs from 'components/AboutUs';
+import Profile from 'components/Profile';
+import HelpfulLinks from 'components/HelpfulLinks';
+import Goals from 'components/Goals';
+import Dashboard from 'components/Dashboard';
 import 'bootstrap/dist/css/bootstrap.css';
+import { ROUTES } from './constants';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,14 +26,29 @@ ReactDOM.render(
       >
         <Router>
           <Switch>
-            <Route path="/login">
+            <Route path={ROUTES.login}>
               <Login />
             </Route>
-            <Route path = "/register">
+            <Route path={ROUTES.register}>
               <Register />
             </Route>
+            <Route path={ROUTES.aboutUs}>
+              <AboutUs />
+            </Route>
+            <Route path={ROUTES.profile}>
+              <Profile />
+            </Route>
+            <Route path={ROUTES.helpfulLinks}>
+              <HelpfulLinks />
+            </Route>
+            <Route path={ROUTES.goals}>
+              <Goals />
+            </Route>
+            <Route path={ROUTES.dashboard}>
+              <Dashboard />
+            </Route>
             <AuthGate>
-              <Route exact path="/">
+              <Route exact path={ROUTES.home}>
                 <App />
               </Route>
             </AuthGate>

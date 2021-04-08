@@ -1,0 +1,522 @@
+:root {
+  --primary-color: rgb(114, 85, 216);
+  --jumbotron-color: rgb(127, 100, 224);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html body {
+  height: 100%;
+}
+
+.color-1 {
+  background-color: var(--primary-color);
+}
+
+.header {
+  background-color: var(--primary-color);
+}
+
+.footer {
+  background-color: var(--primary-color);
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  display: grid;
+}
+
+.footer h5 {
+  margin: auto;
+  padding-top: 10px;
+}
+
+.footerLink {
+  text-decoration: none;
+  color: white;
+}
+
+a {
+  color: none !important;
+}
+
+.login {
+  background-color: var(--primary-color);
+}
+
+.login div {
+  text-align: center;
+}
+
+.login .form-control {
+  display: unset;
+  justify-content: center;
+  width: 50%;
+}
+
+.register {
+  background-color: var(--primary-color);
+}
+
+.register div {
+  text-align: center;
+}
+
+.register .form-control {
+  display: unset;
+  justify-content: center;
+  width: 50%;
+}
+
+.aboutUs {
+  flex: 1;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.aboutUs .underlined-color-title {
+  background-image: linear-gradient(var(--primary-color), var(--primary-color));
+  background-size: 100% 25px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  animation-duration: 1s;
+  animation-name: animated-underlined-color-title;
+}
+
+@keyframes animated-underlined-color-title {
+  from {
+    background-size: 100% 2px;
+  }
+
+  to {
+    background-size: 100% 25px;
+  }
+}
+
+.aboutUs hr {
+  width: 90%;
+  margin: none;
+}
+
+.aboutUs .jumbotron {
+  padding: 0;
+  padding-top: 30px;
+  margin: 0;
+  text-align: left;
+  border-radius: 0;
+  color: black;
+  background: white;
+}
+
+.aboutUs .jumbotron h3 {
+  padding-left: 7%;
+  font-size: 50px;
+}
+
+.aboutUs .jumbotron h5 {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center;
+  font-size: 30px;
+  font-style: italic;
+}
+
+.aboutUs .secondary-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.aboutUs .card-text {
+  text-align: justify;
+}
+
+.aboutUs div .card {
+  border: none;
+}
+
+.home {
+  flex: 1;
+}
+
+
+/* LANDING PAGE*/
+
+.home h1 {
+  text-align: center;
+}
+
+.home div .card {
+  border: none;
+}
+
+.home img {
+  width: 100%;
+}
+
+
+
+
+.container {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.profile .form-control-plaintext {
+  text-align: center;
+  display: unset;
+  justify-content: center;
+  width: 50%;
+}
+
+.profile .form-control {
+  display: unset;
+  justify-content: center;
+  width: 50%;
+}
+
+.products {
+  text-align: center;
+  font-family: Georgia;
+}
+
+.intro {
+  font-size: small;
+}
+
+.home .jumbotron {
+  position: relative;
+  overflow: hidden;
+  background-image: url("image-home/jumbotron.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  box-shadow: 10px 10px 5px 0px rgb(0, 0, 0, 0.75);
+  height: 70vh;
+
+}
+
+.home .jumbotron .container {
+  position: relative;
+  z-index: 1;
+
+}
+
+#protect {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-style: italic;
+  font-size: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#lead-text-muted {
+  font-family: 'Georgia';
+  font-size: 17px;
+  font-style: oblique;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  padding: 20px;
+}
+
+hr.rounded {
+  border-top: 2px solid #bbb;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.caroussel {
+  font-family: Georgia;
+  justify-items: center;
+}
+
+.carousel-item {
+  margin: auto;
+  margin-left: 33%;
+  margin-right: 33%;
+  justify-items: center;
+
+}
+
+.h5 {
+  text-align: center;
+}
+
+#caroussel-caption-j {
+  width: 100%;
+  left: 0 !important;
+  color: black;
+  font-family: Georgia;
+  font-style: oblique;
+  text-align: left;
+  margin-left: 40px;
+}
+
+.caroussel-intro {
+  margin: auto;
+}
+
+#caroussel-caption {
+  width: 100%;
+  left: 0 !important;
+  color: white;
+  font-family: Georgia;
+  font-style: oblique;
+  text-align: left;
+  margin-left: 40px;
+
+}
+
+.divider-h {
+  border-top: 1px solid black;
+}
+
+.contacts .Assos {
+  text-align: center;
+}
+
+.contacts .imagescontacts {
+  align-content: center;
+  margin-left: 60px;
+  margin-bottom: 20px;
+}
+
+.contacts {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/*DashBoard*/
+
+.dashboard .card-dashboard
+{
+  background: linear-gradient(rgb(141, 60, 130,0.7), white);
+  margin: 15px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat, repeat;
+  background-size: cover;  
+}
+
+.dashboard .card-dashboard
+{
+  width: 300px;
+  height: 250px;
+}
+
+.card-dashboard-quotes
+{
+  background: linear-gradient(rgb(141, 60, 130,0.7), white);
+  margin: 15px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat, repeat;
+  background-size: cover; 
+  text-align: center;
+ 
+}
+#dash-quotes
+{
+  font-family:'Segoe UI';
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.dashboard .card-dashboard .button-goals
+{
+  text-align: center;
+  color: white;
+  border-radius: 50%;
+  width : 20px;
+  height: 100px;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-image: linear-gradient(135deg, #0042D9 0%, #0093FF 60%, #0078FF 100%);
+  cursor: pointer;
+	position: relative;
+	padding: 2.5rem 7.5rem;
+	border-radius: 3.75rem;
+	line-height: 2.5rem;
+	font-size: 2rem;
+	border: 1px solid #8f6a8e;
+	background-image: linear-gradient(-180deg, #000000 0%, #C01F9E 100%);
+	box-shadow: 0 1rem 1.25rem 0 rgba(0, 0, 0, 0.5),
+							0 -0.25rem 1.5rem rgba(110, 15, 155, 1) inset,
+							0 0.75rem 0.5rem rgba(255,255,255, 0.4) inset,
+							0 0.25rem 0.5rem 0 rgb(248, 248, 248) inset;
+              font-family: serif;
+}
+/* Quotes*/
+
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.quotes .body {
+  height: 100vh;
+  color: #fff;
+  font-size: 32px;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #222;
+  background-size: cover;
+  position: relative;
+}
+
+.quotes #root {
+  background-color: rgb(52, 135, 191);
+  min-width: 400px;
+  border: 1px solid white;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.quotes .quote-text {
+  font-size: 40px;
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.quotes .quote-footer{
+  margin: 10px 0 10px 0;
+  font-size: 20px;
+}
+
+.quotes .icon {
+  margin-top: 10px;
+  float: left;
+}
+
+.quotes .fa-quote-left {
+  position: relative;
+  top: 34px;
+}
+
+.quotes .fa-quote-right {
+  position: relative;
+  bottom: 23px;
+  float: right;
+}
+
+.quotes .fa-twitter {
+  font-size: 30px !important;
+  color: #80C3F5;
+}
+
+.quotes .quote-next {
+  color: #fff;
+  width: 70px;
+  font-size: 24px;
+  float: right;
+  margin-top: 16px;
+  padding: 5px 0;
+  background-color: transparent;
+  border: 1px solid ;
+}
+
+.quotes .quote-next:focus {
+  outline: none;
+}
+
+.quotebox
+{
+  background-color: rgba(255, 255, 255, 0.637);
+ padding: 4px;
+ margin: 4px;
+}
+
+.quotebox #quote
+{
+  font-size: 18px;
+  font-family: serif;
+}
+
+.quotebox #author
+{
+  font-size: 10px;
+  font-family: serif;
+  font-style: italic;
+}
+#newquote
+{
+  margin:9px;}
+
+/*Music*/
+
+.player .now-playing__name {
+  font-size: 1.5em;
+  margin-bottom: 0.2em;
+}
+
+.now-playing__status {
+  margin-bottom: 1em;
+}
+.now-playing__img {
+  float: left;
+  margin-right: 10px;
+  text-align: right;
+  width: 45%;
+}
+.now-playing__img img {
+  max-width: 80vmin;
+  width: 100%;
+}
+.now-playing__side {
+  margin-left: 5%;
+  width: 45%;
+}
+/** Progress **/
+.progress {
+  border: 1px solid #eee;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progress__bar {
+  background-color: #eee;
+  height: 4px;
+}
+
+/*PROGRESSION*/
+
+
+/*ACCOMPLISHMENT*/
+
+.accomplishment .badge
+{
+  width: 50px;
+  height: 40px;
+  padding: 6px;
+  margin: 3px;
+ 
+}
+.accomplishment .icon{
+
+  width: 50px;
+  height: 60px;
+  color: white;
+}
+
+.QuestionModal {
+  justify-content: center;
+  text-align: center;
+}

@@ -4,9 +4,19 @@ import { auth } from "utils/nhost";
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 import { useAuth } from "@nhost/react-auth";
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import Button from 'react-bootstrap/Button'
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import '../styles/custom.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { ROUTES } from '../constants';
+import Footer from 'components/Footer';
+
 
 const GET_USER_DATA = gql`
 query getUserData($user_id: uuid!) {
@@ -35,19 +45,20 @@ export function UserHeader() {
     return <div>Error...</div>;
   }
 
-  const {user} = data;
+  const { user } = data;
 
   return (
-    <div>
-      <div>{user.display_name}</div>
-      <div>
-        <Button variant="danger" onClick={() => {
-          auth.logout();
-          history.push("/login");
-        }}>
-          Logout
-        </Button>
-      </div>
+    <div className="btn-group">
+      <DropdownButton title={user.display_name}>
+        <Dropdown.Item as={Link} to={ROUTES.profile}>Profile</Dropdown.Item>
+        <Dropdown.Item as={Link} to={ROUTES.progression}>Progress</Dropdown.Item>
+      </DropdownButton>
+      <Button variant="danger" onClick={() => {
+        auth.logout();
+        history.push("/login");
+      }}>
+        Logout
+      </Button>
     </div>
   );
 }
@@ -57,31 +68,40 @@ export function Header() {
 
   return (
     <div>
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home"><img
-          alt=""
-          src="./react-logo.svg"
-          width="20"
-          height="20"
-          className="d-inline-block align-top"
-        />{' '}
-          React-Bootstrap
+      <Navbar className="header" expand="lg">
+        <Navbar.Brand as={Link} to={ROUTES.home}>
+          <img
+            alt="Kahina I'Care Logo"
+            src="/kahina-i-care-logo.png"
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+          />
+          Kahina I'Care
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse>
           <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link as={Link} to={ROUTES.home}>Home</Nav.Link>
+            {signedIn ? (<Nav.Link as={Link} to={ROUTES.dashboard}>Dashboard</Nav.Link>) : ''}
+            <Nav.Link as={Link} to={ROUTES.helpfulLinks}>Helpful Links</Nav.Link>
+            <Nav.Link as={Link} to={ROUTES.aboutUs}>About Us</Nav.Link>
+            <NavDropdown title="Change Language" id="basic-nav-dropdown">
+              <NavDropdown.Item href="english">English</NavDropdown.Item>
+              <NavDropdown.Item href="french">French</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
+          <Form inline className="mr-auto">
+          </Form>
           <div>
             {signedIn ? (
               <UserHeader />
             ) : (
-                <>
-                  <Link to="/login"><Button variant="primary">Login</Button></Link>
-                  <Link to="/register"><Button variant="primary">Register</Button></Link>
-                </>
-              )}
+              <>
+                <Link to={ROUTES.login}><Button variant="primary">Login</Button></Link>
+                <Link to={ROUTES.register}><Button variant="primary">Register</Button></Link>
+              </>
+            )}
           </div>
         </Navbar.Collapse>
       </Navbar>
@@ -97,9 +117,7 @@ export function Main({ children }) {
   );
 }
 
-export function Footer() {
-  return (<div>Footer</div>);
-}
+
 
 export default function Layout({ children }) {
   return (
